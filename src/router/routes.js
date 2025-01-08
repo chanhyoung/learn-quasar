@@ -10,7 +10,11 @@ const routes = [
     children: [
       {
         path: 'typography',
-        component: () => import('src/pages/study/quasar/Typography.vue'),
+        component: () => import('pages/study/quasar/Typography.vue'),
+      },
+      {
+        path: 'colors',
+        component: () => import('pages/study/quasar/Colors.vue'),
       },
     ],
   },
