@@ -47,6 +47,11 @@ const linksList = [
     icon: 'school',
     to: '/quasar/colors',
   },
+  {
+    title: 'Spacing',
+    icon: 'school',
+    to: '/quasar/spacing',
+  },
 ];
 </script>
 <script setup>

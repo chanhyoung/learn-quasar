@@ -16,6 +16,10 @@ const routes = [
         path: 'colors',
         component: () => import('pages/study/quasar/Colors.vue'),
       },
+      {
+        path: 'spacing',
+        component: () => import('pages/study/quasar/Spacing.vue'),
+      },
     ],
   },
 
