@@ -38,19 +38,17 @@
 <script>
 const linksList = [
   {
-    title: 'Quasar Study',
-    caption: 'quasar',
+    title: 'Typography',
     icon: 'school',
-    to: 'quasar',
-  }
+    to: '/quasar/typography',
+  },
 ];
-
 </script>
 <script setup>
-import { ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
+import { ref } from 'vue';
 
 const leftDrawerOpen = ref(false);
 const essentialLinks = linksList;
-const toggleLeftDrawer = () => leftDrawerOpen.value = !leftDrawerOpen.value;
+const toggleLeftDrawer = () => (leftDrawerOpen.value = !leftDrawerOpen.value);
 </script>
