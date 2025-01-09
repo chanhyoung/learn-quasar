@@ -1,5 +1,5 @@
 <template>
-  <q-item clickable tag="a" :to="to">
+  <q-item clickable tag="a" :to="to" active-class="text-secondary">
     <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
@@ -13,24 +13,24 @@
 
 <script setup>
 defineProps({
-    title: {
-      type: String,
-      required: true,
-    },
+  title: {
+    type: String,
+    required: true,
+  },
 
-    caption: {
-      type: String,
-      default: '',
-    },
+  caption: {
+    type: String,
+    default: '',
+  },
 
-    to: {
-      type: String,
-      default: '#',
-    },
+  to: {
+    type: String,
+    default: '#',
+  },
 
-    icon: {
-      type: String,
-      default: '',
-    },
-  });
+  icon: {
+    type: String,
+    default: '',
+  },
+});
 </script>

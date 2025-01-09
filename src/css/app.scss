@@ -3,3 +3,8 @@
 body {
   font-family: 'Nanum Gothic', serif;
 }
+
+body.body--dark {
+  /* ... */
+  --q-primary: #161717;
+}
