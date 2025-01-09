@@ -20,6 +20,10 @@ const routes = [
         path: 'spacing',
         component: () => import('pages/study/quasar/Spacing.vue'),
       },
+      {
+        path: 'breakpoints',
+        component: () => import('pages/study/quasar/Breakpoints.vue'),
+      },
     ],
   },
 

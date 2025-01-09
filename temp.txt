@@ -1,2 +1,9 @@
 npm run lint
 npm run format
+
+
+// Quasar Vue 외부에서 접근하기
+import { Quasar } from 'quasar'
+console.log(Quasar.platform.is.ios);
+
+

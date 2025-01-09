@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="q-pa-xl">
     <section class="q-mb-xl">
       <div class="text-h4">Heading</div>
       <q-separator class="q-my-md"></q-separator>
