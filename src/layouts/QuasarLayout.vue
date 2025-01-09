@@ -73,6 +73,16 @@ const linksList = [
     icon: 'school',
     to: '/quasar/helper-classes',
   },
+  {
+    title: 'Flex Grid 1',
+    icon: 'school',
+    to: '/quasar/flex-grid-1',
+  },
+  {
+    title: 'Flex Grid 2',
+    icon: 'school',
+    to: '/quasar/flex-grid-2',
+  },
 ];
 </script>
 <script setup>

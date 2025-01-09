@@ -28,6 +28,14 @@ const routes = [
         path: 'helper-classes',
         component: () => import('pages/study/quasar/HelperClasses.vue'),
       },
+      {
+        path: 'flex-grid-1',
+        component: () => import('pages/study/quasar/FlexGrid1.vue'),
+      },
+      {
+        path: 'flex-grid-2',
+        component: () => import('pages/study/quasar/FlexGrid2.vue'),
+      },
     ],
   },
 
