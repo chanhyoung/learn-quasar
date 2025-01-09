@@ -24,6 +24,10 @@ const routes = [
         path: 'breakpoints',
         component: () => import('pages/study/quasar/Breakpoints.vue'),
       },
+      {
+        path: 'helper-classes',
+        component: () => import('pages/study/quasar/HelperClasses.vue'),
+      },
     ],
   },
 

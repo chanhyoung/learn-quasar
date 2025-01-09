@@ -57,6 +57,11 @@ const linksList = [
     icon: 'school',
     to: '/quasar/breakpoints',
   },
+  {
+    title: 'HelperClasses',
+    icon: 'school',
+    to: '/quasar/helper-classes',
+  },
 ];
 </script>
 <script setup>
