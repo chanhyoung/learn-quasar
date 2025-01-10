@@ -33,8 +33,25 @@ const routes = [
         component: () => import('pages/study/quasar/FlexGrid1.vue'),
       },
       {
-        path: 'flex-grid-2',
-        component: () => import('pages/study/quasar/FlexGrid2.vue'),
+        path: 'profile',
+        component: () => import('pages/study/quasar/profile/ProfilePage.vue'),
+        children: [
+          {
+            path: '',
+            component: () =>
+              import('pages/study/quasar/profile/ProfilePosts.vue'),
+          },
+          {
+            path: 'saved',
+            component: () =>
+              import('pages/study/quasar/profile/ProfileSaved.vue'),
+          },
+          {
+            path: 'tagged',
+            component: () =>
+              import('pages/study/quasar/profile/ProfileTagged.vue'),
+          },
+        ],
       },
     ],
   },

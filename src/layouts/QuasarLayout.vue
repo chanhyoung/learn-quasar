@@ -20,6 +20,11 @@
           :icon="darkModeIcon"
           @click="toggleDarkMode"
         ></q-btn>
+        <q-btn round size="sm" class="q-ml-md" to="/quasar/profile">
+          <q-avatar>
+            <img src="/logo.png" />
+          </q-avatar>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
@@ -79,9 +84,9 @@ const linksList = [
     to: '/quasar/flex-grid-1',
   },
   {
-    title: 'Flex Grid 2',
+    title: 'Profile',
     icon: 'school',
-    to: '/quasar/flex-grid-2',
+    to: '/quasar/profile',
   },
 ];
 </script>
