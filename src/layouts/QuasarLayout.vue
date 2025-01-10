@@ -20,10 +20,21 @@
           :icon="darkModeIcon"
           @click="toggleDarkMode"
         ></q-btn>
-        <q-btn round size="sm" class="q-ml-md" to="/quasar/profile">
+        <q-btn round size="sm" class="q-ml-md">
           <q-avatar>
             <img src="/logo.png" />
           </q-avatar>
+          <q-menu :offset="[0, 10]">
+            <q-list style="min-width: 100px">
+              <q-item clickable v-close-popup to="/quasar/profile">
+                <q-item-section>프로필</q-item-section>
+              </q-item>
+              <q-separator />
+              <q-item clickable v-close-popup to="/auth/sign-in">
+                <q-item-section>로그아웃</q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
         </q-btn>
       </q-toolbar>
     </q-header>

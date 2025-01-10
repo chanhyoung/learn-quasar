@@ -5,6 +5,20 @@ const routes = [
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
   {
+    path: '/auth',
+    component: () => import('layouts/AuthLayout.vue'),
+    children: [
+      {
+        path: 'sign-in',
+        component: () => import('pages/study/quasar/auth/SignIn.vue'),
+      },
+      {
+        path: 'sign-up',
+        component: () => import('pages/study/quasar/auth/SignUp.vue'),
+      },
+    ],
+  },
+  {
     path: '/quasar',
     component: () => import('layouts/QuasarLayout.vue'),
     children: [
