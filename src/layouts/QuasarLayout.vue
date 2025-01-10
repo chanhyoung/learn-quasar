@@ -99,6 +99,11 @@ const linksList = [
     icon: 'school',
     to: '/quasar/profile',
   },
+  {
+    title: 'FormHandling',
+    icon: 'school',
+    to: '/quasar/form-handling',
+  },
 ];
 </script>
 <script setup>
