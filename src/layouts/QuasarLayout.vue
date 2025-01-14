@@ -11,7 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-toolbar-title> {{ $t('productName') }} </q-toolbar-title>
 
         <q-btn
           flat
@@ -108,6 +108,12 @@ const linksList = [
     title: 'Quasar Utils',
     icon: 'school',
     to: '/quasar/quasar-utils',
+  },
+  {
+    title: 'Quasar Language Packs',
+    caption: 'quasar.dev',
+    icon: 'school',
+    to: '/quasar/quasar-language-packs',
   },
 ];
 </script>
