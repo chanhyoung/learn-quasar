@@ -7,3 +7,4 @@ import { Quasar } from 'quasar'
 console.log(Quasar.platform.is.ios);
 
 
+npm install -D tailwindcss@^3.2.4

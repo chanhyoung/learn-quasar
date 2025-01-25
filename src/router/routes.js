@@ -19,6 +19,16 @@ const routes = [
     ],
   },
   {
+    path: '/tailwind',
+    component: () => import('layouts/TailwindLayout.vue'),
+    children: [
+      {
+        path: 'typography',
+        component: () => import('src/pages/study/tailwind/Typography.vue'),
+      },
+    ],
+  },
+  {
     path: '/quasar',
     component: () => import('layouts/QuasarLayout.vue'),
     children: [

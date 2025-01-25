@@ -42,9 +42,14 @@ const linksList = [
     caption: 'quasar',
     icon: 'school',
     to: 'quasar',
-  }
+  },
+  {
+    title: 'Tailwind Study',
+    caption: 'tailwind',
+    icon: 'school',
+    to: 'tailwind',
+  },
 ];
-
 </script>
 <script setup>
 import { ref } from 'vue';
@@ -52,5 +57,5 @@ import EssentialLink from 'components/EssentialLink.vue';
 
 const leftDrawerOpen = ref(false);
 const essentialLinks = linksList;
-const toggleLeftDrawer = () => leftDrawerOpen.value = !leftDrawerOpen.value;
+const toggleLeftDrawer = () => (leftDrawerOpen.value = !leftDrawerOpen.value);
 </script>
