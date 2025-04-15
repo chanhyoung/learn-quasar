@@ -5,6 +5,16 @@ const routes = [
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
   {
+    path: '/youtube',
+    component: () => import('layouts/youtube/Index.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/study/quasar/youtube/IndexPage.vue'),
+      },
+    ],
+  },
+  {
     path: '/auth',
     component: () => import('layouts/AuthLayout.vue'),
     children: [
