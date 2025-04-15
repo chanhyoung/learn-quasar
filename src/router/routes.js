@@ -5,6 +5,20 @@ const routes = [
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
   {
+    path: '/post',
+    component: () => import('layouts/PostLayout.vue'),
+    children: [
+      {
+        path: 'home',
+        component: () => import('pages/study/post/PostPage.vue'),
+      },
+      {
+        path: 'about',
+        component: () => import('pages/study/post/AboutPage.vue'),
+      },
+    ],
+  },
+  {
     path: '/auth',
     component: () => import('layouts/AuthLayout.vue'),
     children: [

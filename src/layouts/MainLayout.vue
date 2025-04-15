@@ -49,6 +49,12 @@ const linksList = [
     icon: 'school',
     to: 'tailwind',
   },
+  {
+    title: 'Post Lecture',
+    caption: '',
+    icon: 'school',
+    to: 'post',
+  },
 ];
 </script>
 <script setup>
