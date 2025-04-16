@@ -2,27 +2,13 @@
   "posts": [
     {
       "id": 1,
-      "title": "제목1",
-      "content": "내용1",
-      "createdAt": "2025/01/01",
+      "title": "제목11",
+      "content": "내용11",
       "tags": [
         "google"
       ],
-      "accept": true
-    },
-    {
-      "id": 2,
-      "title": "제목2",
-      "content": "내용2",
-      "createdAt": "2025/02/01",
-      "tags": [
-        "google",
-        "apple",
-        "twitter",
-        "facebook",
-        "oracle"
-      ],
-      "accept": true
+      "accept": true,
+      "createdAt": "2025/01/01"
     },
     {
       "id": 3,
