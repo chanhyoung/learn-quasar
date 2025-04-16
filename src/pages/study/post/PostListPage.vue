@@ -22,7 +22,7 @@
           flat
           bordered
           class="bg-grey-2 my-card cursor-pointer"
-          @click="goPage(post.id)"
+          @click="goDetailPage(post.id)"
         >
           <q-card-section>
             <div class="text-h6">{{ post.title }}</div>
@@ -42,14 +42,24 @@
 
 <script setup>
 import { ref } from 'vue';
-import { fetchPosts } from 'src/api/posts.js';
+import { getPosts } from 'src/api/posts.js';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const posts = ref([]);
-posts.value = fetchPosts();
 
-const goPage = id => {
+const fetchPosts = async () => {
+  try {
+    const { data } = await getPosts();
+    posts.value = data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+fetchPosts();
+
+const goDetailPage = id => {
   router.push(`/post/detail/${id}`);
 };
 </script>

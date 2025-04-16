@@ -8,7 +8,7 @@
         class="q-gutter-y-md q-mt-lg"
         autofocus
         greedy
-        @submit="onSubmit"
+        @submit.prevent="onSubmit"
         @reset="onReset"
       >
         <q-input
@@ -43,7 +43,7 @@
             val => val.length <= 2 || '최대 2개 까지 선택 가능합니다',
           ]"
         />
-        <q-input
+        <!-- <q-input
           outlined
           v-model="form.createdAt"
           mask="date"
@@ -64,7 +64,7 @@
               </q-popup-proxy>
             </q-icon>
           </template>
-        </q-input>
+        </q-input> -->
         <q-toggle :label="`동의 하시겠습니까?`" v-model="form.accept" />
         <!-- false-value="Disagreed"
           true-value="Agreed" -->
@@ -84,8 +84,10 @@
 <script setup>
 import { ref } from 'vue';
 import { useQuasar, date } from 'quasar';
+import { createPost } from 'src/api/posts.js';
+import { useRouter } from 'vue-router';
 
-const { formatDate } = date;
+// const { formatDate } = date;
 
 const $q = useQuasar();
 
@@ -94,7 +96,7 @@ const form = ref({
   title: '',
   content: '',
   tags: [],
-  createdAt: formatDate(new Date(), 'YYYY/MM/DD'),
+  // createdAt: formatDate(new Date(), 'YYYY/MM/DD'),
   accept: false,
 });
 // const tagOptions = ref(['Google', 'Facebook', 'Twitter', 'Apple', 'Oracle']);
@@ -105,30 +107,24 @@ const tagOptions = ref([
   { label: '애플', value: 'apple' },
   { label: '오라클', value: 'oracle' },
 ]);
-const validate = () => {
-  myForm.value.validate().then(success => {
-    if (success) {
-      alert('성공입니다!');
-    } else {
-      alert('실패입니다!');
-    }
-  });
-};
-const reset = () => {
-  myForm.value.resetValidation();
-};
-const onSubmit = () => {
-  if (form.value.accept !== true) {
-    alert('동의 해주세요!!!');
-    return;
-  }
-  $q.loading.show();
-  setTimeout(() => {
-    $q.loading.hide();
-    // alert('성공~!');
-  }, 1000);
 
-  console.log('form: ', form.value);
+const router = useRouter();
+
+const onSubmit = async () => {
+  // myForm.value.validate();
+
+  // $q.loading.show();
+
+  try {
+    console.log('form: ', form.value);
+    await createPost({
+      ...form.value,
+      createdAt: Date.now(),
+    });
+    router.push('/post/list');
+  } catch (error) {
+    console.error(error);
+  }
 };
 const onReset = () => {
   form.value.title = '';

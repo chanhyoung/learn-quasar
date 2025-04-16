@@ -22,7 +22,7 @@
       <q-space></q-space>
       <q-btn label="목록" color="primary" outline to="/post/list" />
       <q-btn label="수정" color="primary" @click="goEdit(post.id)" />
-      <q-btn label="삭제" color="negative" />
+      <q-btn label="삭제" color="negative" @click="onDelete(post.id)" />
     </div>
 
     <!-- <p>params: {{ $route }}</p> -->
@@ -31,7 +31,7 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
-import { fetchPost } from 'src/api/posts.js';
+import { getPostById, deletePost } from 'src/api/posts.js';
 import { ref } from 'vue';
 
 const route = useRoute();
@@ -40,31 +40,42 @@ const goEdit = id => {
   router.push(`/post/edit/${id}`);
 };
 
-const post = ref({});
-post.value = fetchPost(route.params.id);
+const post = ref({
+  id: null,
+  title: null,
+  content: null,
+  tags: [],
+  createdAt: null,
+});
 
-// defineProps({
-//   title: {
-//     type: Object,
-//     required: true,
-//   },
-//   content: {
-//     type: String,
-//     required: true,
-//   },
-//   tags: {
-//     type: Array,
-//     required: true,
-//   },
-//   createdAt: {
-//     type: String,
-//     required: true,
-//   },
-//   accept: {
-//     type: String,
-//     required: true,
-//   },
-// });
+const fetchPost = async () => {
+  console.log('id: ', route.params.id);
+  try {
+    const { data } = await getPostById(route.params.id);
+    setPost(data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const setPost = data => {
+  post.value.id = data.id;
+  post.value.title = data.title;
+  post.value.content = data.content;
+  post.value.tags = data.tags;
+  post.value.createdAt = data.createdAt;
+};
+fetchPost();
+
+const onDelete = async id => {
+  if (confirm('삭제 하시겠습니까?') === false) return;
+  try {
+    await deletePost(id);
+    router.push('/post/list');
+  } catch (error) {
+    console.error(error);
+  }
+};
 </script>
 
 <style lang="scss" scoped></style>
