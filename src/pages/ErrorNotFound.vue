@@ -5,7 +5,9 @@
     <div>
       <div style="font-size: 30vh">404</div>
 
-      <div class="text-h2" style="opacity: 0.4">Oops. Nothing here...</div>
+      <div class="text-h2" style="opacity: 0.4">
+        요청한 페이지를 찾을 수 없습니다!
+      </div>
 
       <q-btn
         class="q-mt-xl"

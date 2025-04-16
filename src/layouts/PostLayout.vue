@@ -12,8 +12,12 @@
         />
         <q-toolbar-title shrink> Post Lecture </q-toolbar-title>
         <div class="q-gutter-x-md">
-          <RouterLink to="/post/home" active-class="active">Home</RouterLink>
-          <RouterLink to="/post/about" active-class="active">About</RouterLink>
+          <RouterLink to="/post/home" active-class="text-secondary"
+            >Home</RouterLink
+          >
+          <RouterLink to="/post/about" active-class="text-secondary"
+            >About</RouterLink
+          >
         </div>
         <q-space></q-space>
         <q-btn
@@ -60,6 +64,11 @@ const linksList = [
     title: 'About',
     icon: 'school',
     to: '/post/about',
+  },
+  {
+    title: '게시글',
+    icon: 'school',
+    to: '/post/list',
   },
 ];
 </script>

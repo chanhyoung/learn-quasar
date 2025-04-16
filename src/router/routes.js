@@ -10,11 +10,27 @@ const routes = [
     children: [
       {
         path: 'home',
-        component: () => import('pages/study/post/PostPage.vue'),
+        component: () => import('pages/study/post/PostHomePage.vue'),
       },
       {
         path: 'about',
         component: () => import('pages/study/post/AboutPage.vue'),
+      },
+      {
+        path: 'list',
+        component: () => import('pages/study/post/PostListPage.vue'),
+      },
+      {
+        path: 'create',
+        component: () => import('pages/study/post/PostCreate.vue'),
+      },
+      {
+        path: 'detail/:id',
+        component: () => import('pages/study/post/PostDetail.vue'),
+      },
+      {
+        path: 'edit/:id',
+        component: () => import('pages/study/post/PostEdit.vue'),
       },
     ],
   },
