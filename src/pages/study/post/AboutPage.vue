@@ -17,12 +17,21 @@
         <q-btn color="primary" label="Notify" @click="notifyMsg" />
       </p>
     </div>
+    <div class="q-gutter-y-xs">
+      <p>Store</p>
+      <p>counter: {{ store.counter }}</p>
+      <p>doubleCounter: {{ store.doubleCount }}</p>
+      <p>
+        <q-btn color="primary" label="Counter" @click="store.increment()" />
+      </p>
+    </div>
   </q-page>
 </template>
 
 <script setup>
 import { useQuasar } from 'quasar';
 import { useRoute } from 'vue-router';
+import { useCounterStore } from 'src/stores/counter';
 
 const route = useRoute();
 const $q = useQuasar();
@@ -37,6 +46,8 @@ const notifyMsg = () => {
     color: 'blue',
   });
 };
+
+const store = useCounterStore();
 </script>
 
 <style lang="scss" scoped></style>
