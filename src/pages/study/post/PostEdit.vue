@@ -115,8 +115,8 @@ const fetchPost = async () => {
   try {
     const { data } = await getPostById(route.params.id);
     setPost(data);
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
   }
 };
 
@@ -139,8 +139,8 @@ const update = async () => {
       ...post.value,
     });
     router.push(`/post/detail/${post.value.id}`);
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
   }
 };
 

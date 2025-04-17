@@ -34,6 +34,9 @@
           <q-card-section>
             {{ post.content }}
           </q-card-section>
+          <q-card-section>
+            {{ createdDate(post.createdAt) }}
+          </q-card-section>
         </q-card>
       </div>
     </div>
@@ -41,7 +44,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import { getPosts } from 'src/api/posts.js';
 import { useRouter } from 'vue-router';
 
@@ -52,8 +55,8 @@ const fetchPosts = async () => {
   try {
     const { data } = await getPosts();
     posts.value = data;
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
   }
 };
 
@@ -61,6 +64,11 @@ fetchPosts();
 
 const goDetailPage = id => {
   router.push(`/post/detail/${id}`);
+};
+
+const dayjs = inject('dayjs');
+const createdDate = createdAt => {
+  return dayjs(createdAt).format('YYYY. MM. DD HH:mm:ss');
 };
 </script>
 

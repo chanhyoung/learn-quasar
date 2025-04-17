@@ -36,6 +36,7 @@ module.exports = configure(function (/* ctx */) {
       'loading-plugin',
       'loading-bar-plugin',
       'quasar-lang-pack',
+      'dayjs',
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
@@ -128,7 +129,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['LocalStorage', 'Loading', 'LoadingBar'],
+      plugins: ['LocalStorage', 'Loading', 'LoadingBar', 'Dialog', 'Notify'],
       config: {
         // loading: {
         //   delay: 500,

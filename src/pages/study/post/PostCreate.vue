@@ -83,7 +83,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useQuasar, date } from 'quasar';
+import { useQuasar } from 'quasar';
 import { createPost } from 'src/api/posts.js';
 import { useRouter } from 'vue-router';
 
@@ -122,15 +122,14 @@ const onSubmit = async () => {
       createdAt: Date.now(),
     });
     router.push('/post/list');
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
   }
 };
 const onReset = () => {
   form.value.title = '';
   form.value.content = '';
   form.value.tags = [];
-  form.value.createdAt = formatDate(new Date(), 'YYYY/MM/DD');
   form.value.accept = false;
 };
 </script>

@@ -4,7 +4,9 @@
     <q-separator class="q-my-md"></q-separator>
     <q-card bordered class="q-mb-md my-card" flat>
       <q-card-section>
-        <div class="text-h6">{{ post.title }}</div>
+        <div class="text-h6">
+          {{ post.title }}
+        </div>
         <div class="text-subtitle2">{{ post.tags }}`</div>
       </q-card-section>
 
@@ -12,7 +14,7 @@
         {{ post.content }}
       </q-card-section>
       <q-card-section class="text-right">
-        {{ post.createdAt }}
+        {{ $dayjs(post.createdAt).format('YYYY. MM. DD HH:mm:ss') }}
       </q-card-section>
     </q-card>
 
@@ -53,8 +55,8 @@ const fetchPost = async () => {
   try {
     const { data } = await getPostById(route.params.id);
     setPost(data);
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
   }
 };
 
@@ -72,8 +74,8 @@ const onDelete = async id => {
   try {
     await deletePost(id);
     router.push('/post/list');
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
   }
 };
 </script>
